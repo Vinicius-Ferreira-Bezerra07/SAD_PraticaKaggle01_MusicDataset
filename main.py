@@ -1,17 +1,27 @@
 import numpy as np
 import pandas as pd
-import streamlit as st
-
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import CountVectorizer
-
+import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st
+# streamlit run <nome da aplicação>
 
+# from sklearn.metrics.pairwise import cosine_similarity
+# from sklearn.feature_extraction.text import CountVectorizer
 
 #Se baixar a base de dados para usar remotamente, alterar o caminho para o local onde esta a base baixada
 #https://www.kaggle.com/datasets/suraj520/music-dataset-song-information-and-lyrics?resource=download
+
 dataBase = pd.read_csv("songs.csv")
 
-# dataBase = pd.read_csv("/kaggle/input/music-dataset-song-information-and-lyrics/songs.csv")
+#informações da database
+# print(dataBase.info())
+# print(dataBase.describe())
 
-sns.histplot(dataBase, x='Popularity', kde=True, color='g')
+st.title("DataBase Songs - Streamlit")
+
+#dataBase = pd.read_csv("/kaggle/input/music-dataset-song-information-and-lyrics/songs.csv")
+
+# Grafico de Barras de musicas/generos
+st.subheader("Distribuição de musicas por genero")
+music_count = dataBase['Name'].value_counts()
+print(music_count)
