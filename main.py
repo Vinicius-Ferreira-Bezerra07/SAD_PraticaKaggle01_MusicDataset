@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+
 # streamlit run <nome da aplicação>
 
 # from sklearn.metrics.pairwise import cosine_similarity
@@ -11,9 +12,10 @@ import streamlit as st
 # Se baixar a base de dados para usar remotamente, alterar o caminho para o local onde esta a base baixada
 # https://www.kaggle.com/datasets/suraj520/music-dataset-song-information-and-lyrics?resource=download
 
-dataBase = pd.read_csv("songs.csv")
+dataBase = pd.read_csv("songsData.csv")
 
 # informações da database
+# print(dataBase.head())
 # print(dataBase.info())
 # print(dataBase.describe())
 
